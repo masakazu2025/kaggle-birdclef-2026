@@ -4,31 +4,25 @@ Usage:
     poetry run python scripts/pull_notebook.py <kernel_slug>
 
 Example:
-    poetry run python scripts/pull_notebook.py your-username/eda-01-overview
+    poetry run python scripts/pull_notebook.py masakazum/birdclef-2026-pytorch-baseline-inference
 """
 
 import argparse
-import subprocess
 import sys
 from pathlib import Path
 
 
 def pull_notebook(kernel_slug: str, output_dir: str = "notebooks") -> None:
-    out = Path(output_dir)
+    from kaggle import api
+
+    api.authenticate()
+    kernel_name = kernel_slug.split("/")[-1]
+    out = Path(output_dir) / kernel_name
     out.mkdir(parents=True, exist_ok=True)
 
-    result = subprocess.run(
-        [
-            "poetry", "run", "kaggle", "kernels", "output",
-            kernel_slug, "-p", str(out),
-        ],
-        capture_output=True,
-        text=True,
-    )
-    print(result.stdout)
-    if result.returncode != 0:
-        print(result.stderr)
-        sys.exit(result.returncode)
+    print(f"Pulling {kernel_slug} into {out} ...")
+    api.kernels_pull(kernel_slug, path=str(out), metadata=True)
+    print("Done.")
 
 
 if __name__ == "__main__":
