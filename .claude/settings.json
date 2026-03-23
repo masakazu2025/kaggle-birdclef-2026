@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(poetry:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(python:*)",
+      "Bash(poetry run python:*)",
+      "Bash(poetry run kaggle:*)",
+      "Bash(poetry run jupyter:*)",
+      "Bash(poetry add:*)",
+      "Bash(poetry install:*)",
+      "Bash(poetry show:*)",
+      "Bash(gh auth:*)",
+      "Bash(cmd.exe /c \"gh auth status 2>&1\")"
+    ]
+  }
+}
