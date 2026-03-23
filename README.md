@@ -1,62 +1,30 @@
 # BirdCLEF 2026
 
-Kaggle competition: [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+Kaggleコンペ: [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
-Acoustic species identification in the Pantanal wetlands of South America.
-Multi-label classification of 650+ bird species from passive acoustic monitoring recordings.
+南米パンタナール湿地帯における音響種識別。
+受動的音響モニタリング（PAM）録音から650種以上の鳥類をマルチラベル分類する。
 
-**Submission deadline**: June 3, 2026
+**提出締め切り**: 2026年6月3日
 
 ---
 
-## Project Structure
+## タスク概要
+
+- **入力**: 受動的音響モニタリングの音声録音（.ogg）
+- **出力**: 5秒クリップごとの鳥類種のマルチラベル予測
+- **評価指標**: マルチラベル分類向けカスタム指標
+- **対象地域**: 南米パンタナール湿地帯（15万km²以上）
+
+## プロジェクト構成
 
 ```
 kaggle-birdclef-2026/
 ├── notebooks/
-│   ├── eda/                    # Exploratory data analysis
-│   ├── training/               # Model training
-│   └── inference/              # Inference & submission
-│       └── <kernel-name>/
-│           ├── <kernel-name>.ipynb
-│           └── kernel-metadata.json
-├── src/birdclef/               # Utility modules
-├── scripts/
-│   ├── push_notebook.py        # Push notebook to Kaggle
-│   └── pull_notebook.py        # Pull notebook from Kaggle
-└── docs/
+│   ├── eda/          # 探索的データ分析
+│   ├── training/     # モデル学習
+│   └── inference/    # 推論・提出
+├── src/birdclef/     # ユーティリティモジュール
+├── scripts/          # Kaggle push/pull スクリプト
+└── docs/             # 開発ドキュメント
 ```
-
-## Setup
-
-```bash
-poetry install
-```
-
-Kaggle authentication via `KAGGLE_API_TOKEN` environment variable (or `~/.kaggle/kaggle.json`).
-
-## Workflow
-
-### Pull a notebook from Kaggle
-
-```bash
-poetry run python scripts/pull_notebook.py masakazum/<kernel-name> --output-dir notebooks/inference
-```
-
-Pulls the notebook and `kernel-metadata.json` into `notebooks/inference/<kernel-name>/`.
-
-### Push a notebook to Kaggle
-
-```bash
-poetry run python scripts/push_notebook.py notebooks/inference/<kernel-name>/<kernel-name>.ipynb
-```
-
-On first run, `kernel-metadata.json` is generated — edit if needed, then run again to push.
-Push creates a new Kaggle kernel version and starts execution automatically.
-
-## Task
-
-- **Input**: Audio recordings (.ogg) from passive acoustic monitoring
-- **Output**: Multi-label bird species predictions per 5-second clip
-- **Evaluation**: Custom multilabel classification metric
-- **Location**: Pantanal wetlands, South America (150,000+ km²)
