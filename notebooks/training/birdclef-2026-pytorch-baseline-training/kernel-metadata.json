@@ -1,19 +1,19 @@
 {
-  "id": "masakazum/birdclef-2026-pytorch-baseline-inference",
-  "id_no": 112818780,
-  "title": "BirdCLEF 2026 - PyTorch Baseline [Inference]",
-  "code_file": "birdclef-2026-pytorch-baseline-inference.ipynb",
+  "id": "masakazum/birdclef-2026-pytorch-baseline-training",
+  "id_no": 113201342,
+  "title": "BirdCLEF 2026 - PyTorch Baseline [Training]",
+  "code_file": "birdclef-2026-pytorch-baseline-training.ipynb",
   "language": "python",
   "kernel_type": "notebook",
   "is_private": true,
   "enable_gpu": true,
   "enable_tpu": false,
-  "enable_internet": false,
-  "keywords": [],
-  "dataset_sources": [],
-  "kernel_sources": [
-    "masakazum/birdclef-2026-pytorch-baseline-training"
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
   ],
+  "dataset_sources": [],
+  "kernel_sources": [],
   "competition_sources": [
     "birdclef-2026"
   ],
