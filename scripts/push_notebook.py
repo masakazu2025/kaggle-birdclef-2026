@@ -9,8 +9,11 @@ Example:
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
+
+os.environ.setdefault("PYTHONUTF8", "1")
 
 KAGGLE_USERNAME = "masakazum"
 
