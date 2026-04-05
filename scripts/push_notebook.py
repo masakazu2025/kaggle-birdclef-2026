@@ -9,11 +9,10 @@ Example:
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
-os.environ.setdefault("PYTHONUTF8", "1")
+import _compat  # noqa: F401  Windows UTF-8互換
 
 KAGGLE_USERNAME = "masakazum"
 
