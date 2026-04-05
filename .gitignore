@@ -213,3 +213,6 @@ kaggle.json
 *.nbconvert.*
 # Claude Code local settings (contains secrets)
 .claude/settings.local.json
+
+# Discussion data (著作権・戦略情報のため非公開。別privateリポジトリで管理)
+docs/discussions/
