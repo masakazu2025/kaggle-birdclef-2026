@@ -20,3 +20,4 @@
 | 009 | 2026-04-08 | クリップ長増加 | 5秒 → 10秒（鳴き声をより長く学習） | 0.787 | 0.753 | 大幅悪化。クリップ長はデータ量の観点で逆効果 |
 | 010 | 2026-04-15 | Label Smoothing追加 | smoothing=0.1（ラベルノイズ対策） | 0.787 | 0.703 | 大幅悪化。label smoothingは逆効果 |
 | 011 | 2026-04-15 | BackboneをSに変更 | B3 → tf_efficientnetv2_s | 0.787 | 0.800 | 最高記録更新。モデル容量拡大が効いた |
+| 012 | 2026-04-15 | Focal Loss導入 | BCEWithLogitsLoss → FocalLoss(gamma=2.0) | 0.800 | 0.781 | 悪化。Focal Lossは逆効果 |
