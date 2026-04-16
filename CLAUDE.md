@@ -42,3 +42,6 @@ python scripts/push_notebook.py notebooks/inference/birdclef-2026-pytorch-baseli
 
 - 必ず git branch を切ってから編集する
 - 設定値は `# cell: config` セルの `EPOCHS`, `LR`, `BACKBONE` 等を変更する
+- **セルの挿入・削除を行う場合は、必ず事前にReadでノートブック全体を読んでセルIDと順序を把握する**
+- **挿入・削除後も必ずReadで再確認し、消えたセルや重複がないか検証する**
+- 過去にTrainerクラスやimportセルを誤って消した事故が複数回あった。insert操作は特に注意
