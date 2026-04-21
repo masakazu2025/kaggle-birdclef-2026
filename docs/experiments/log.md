@@ -22,3 +22,4 @@
 | 011 | 2026-04-15 | BackboneをSに変更 | B3 → tf_efficientnetv2_s | 0.787 | 0.800 | 最高記録更新。モデル容量拡大が効いた |
 | 012 | 2026-04-15 | Focal Loss導入 | BCEWithLogitsLoss → FocalLoss(gamma=2.0) | 0.800 | 0.781 | 悪化。Focal Lossは逆効果 |
 | 013 | 2026-04-15 | TTA導入 | N_REPEAT=3、ランダム時間シフト（exp012モデルで検証） | 0.781 | 0.783 | わずかに改善。ベストモデルでの効果は別途検証が必要 |
+| 014 | 2026-04-15 | backbone-S + BCE再学習 + TTA | exp011設定で再学習（Focal Loss除去）、インフェレンスはTTA N_REPEAT=3 | 0.800 | 0.803 | 最高記録更新。TTA +0.003の上乗せ確認 |
