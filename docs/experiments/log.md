@@ -24,4 +24,5 @@
 | 013 | 2026-04-15 | TTA導入 | N_REPEAT=3、ランダム時間シフト（exp012モデルで検証） | 0.781 | 0.783 | わずかに改善。ベストモデルでの効果は別途検証が必要 |
 | 014 | 2026-04-15 | backbone-S + BCE再学習 + TTA | exp011設定で再学習（Focal Loss除去）、インフェレンスはTTA N_REPEAT=3 | 0.800 | 0.803 | 最高記録更新。TTA +0.003の上乗せ確認 |
 | 015 | 2026-04-22 | Perch+ProtoSSM+ResidualSSMベースラインに切り替え | yukiZ公開ベースライン(Apache 2.0)をfork。Perch v2 ONNX + ProtoSSM v5 + ResidualSSM | 0.803 | 0.928 | 最高記録更新。パイプライン刷新で+0.125。492位。CPU提出必須 |
-| 016 | 2026-04-22 | ensemble weight調整 | ProtoSSM weight 0.50→0.55（ProtoSSM寄り） | 0.928 | | |
+| 016 | 2026-04-22 | ensemble weight調整 | ProtoSSM weight 0.50→0.55（ProtoSSM寄り） | 0.928 | 0.928 | 変化なし |
+| 017 | 2026-04-28 | rank_aware_power調整 | 0.4→0.3（後処理スケーリング弱める） | 0.928 | | |
